@@ -74,7 +74,8 @@ data.frame(
   u = 1:2, 
   v = c(""a"", ""b"")
 ) # dfs are square lists
-matrix(1:6, nrow=2) # matrices are dfs w/ cols of same type
-  # ^ filled col by col
+matrix(1:6, nrow=2) 
+  # matrices are dfs w/ cols of same type
+  # filled col by col
 x[2, 1]; x[2, ] # matrix indexing is standard","{“foo”: np.arange(1, 6), “bar”: np.array([“a”, “b”])}
 # use pandas for this use case."
