@@ -1,3 +1,7 @@
+#set document(
+  title: "36-350 Statistical Computing R/Python Cheatsheet",
+  date: datetime.today()
+)
 #set page(width: auto, height: auto, margin: 0.5in)
 
 #let process(c) = {
