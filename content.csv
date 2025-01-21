@@ -10,6 +10,8 @@ x <- integer(5)
 x <- seq(1, 5, by = 1)
 x <- seq(1, 5, length.out = 5)
 x <- 1:5
+x <- c(a=1, b=2, c=3)
+attr(x, ""creator"") <- ""pef""
 ","x = np.zeros(5, dtype = int)  
 x = np.ones(5, dtype = float)  
 x = np.full(5, 5.43)  
@@ -69,6 +71,7 @@ np.inf; np.isinf() # e.g., 1/0"
 *lists/dicts*,"list(foo=1:5, bar=c(“a”, “b”))
 x[[2]] # column 2: “a” “b”
 x[[“bar”]] # equivalent
+x$bar # sugar
 unlist(x) # list elements -> a vector 
 data.frame(
   u = 1:2, 
@@ -78,4 +81,6 @@ matrix(1:6, nrow=2)
   # matrices are dfs w/ cols of same type
   # filled col by col
 x[2, 1]; x[2, ] # matrix indexing is standard","{“foo”: np.arange(1, 6), “bar”: np.array([“a”, “b”])}
-# use pandas for this use case."
+# can use pandas for this use case.
+np.arange(1, 7).reshape([3, 2])
+  # filled row by row"
