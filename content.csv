@@ -84,3 +84,64 @@ x[2, 1]; x[2, ] # matrix indexing is standard","{“foo”: np.arange(1, 6), “
 # can use pandas for this use case.
 np.arange(1, 7).reshape([3, 2])
   # filled row by row"
+*control flow*,"seq_along(x)
+
+break
+next","# it’s python,  figure it out
+
+break
+continue"
+*exception handling*,"message(<str>)
+warning(<str>)
+stop(<str>)
+
+tryCatch(
+  {
+    <code that may fail>
+  },
+  error = function(c) { <deal with error here> },
+  warning = function(c) { <deal with warning here> },
+  message = function(c) { <issue a message here> },
+  finally = { <stuff to do regardless of whether there is an error> }
+)
+try(<code>) # bad idea :(","raise Exception(""generic”) 
+raise TypeError(“more specific”)
+
+try:
+  print(x)
+except NameError:
+  print(""Variable x is not defined"")
+except:
+  print(""Something else went wrong"") 
+
+
+"
+*unit tests*,"library(testthat)
+
+<stuff...>
+
+test_that(desc = ""Test for expected output length (1)"", 
+          expect_length(char2int(""a""), 1))
+test_that(desc = ""Test that output is proper type (integer)"", 
+          expect_type(char2int(""a""), ""integer""))
+test_that(desc = ""Test for input string of length greater than 1"", 
+          expect_error(char2int(""aa"")))
+test_that(desc = ""Test for improper input type (numeric)"", 
+          expect_error(char2int(1)))","import unittest
+
+<stuff...>
+
+class testchar2int(unittest.TestCase):
+  def test_olen(self):
+    self.assertEqual(char2int(""a""), 1)
+  def test_otype(self):
+    self.assertIsInstance(char2int(""a""), int)
+  def test_oupper(self):
+    self.assertEqual(char2int(""A""), 1)
+  def test_longstr(self):
+    with self.assertRaises(Exception): char2int('aa')
+  def test_numstr(self):
+    with self.assertRaises(Exception): char2int('1')
+
+if __name__ == '__main__':
+  unittest.main()"
